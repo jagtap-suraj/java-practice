@@ -14,6 +14,7 @@ public class QuestionService {
 
     public void playQuiz() {
         int i = 0;
+        Scanner sc = new Scanner(System.in);
         for (Question q : questions) {
             System.out.println("Question no. : " + q.getId());
             System.out.println(q.getQuestion());
@@ -21,13 +22,13 @@ public class QuestionService {
             System.out.println(q.getOpt2());
             System.out.println(q.getOpt3());
             System.out.println(q.getOpt4());
-            Scanner sc = new Scanner(System.in);
             selection[i++] = sc.nextLine();
         }
 
         for (String s : selection) {
             System.out.println(s);
         }
+        sc.close();
     }
 
     public void printScore() {
